@@ -1,0 +1,9 @@
+<app-header></app-header>
+
+<mat-nav-list>
+  <a *ngFor="let item of menu" [href]="item.router" mat-list-item>
+    <mat-icon matListIcon>{{item.icon}}</mat-icon>
+    <span class="item-title">
+      {{item.label}}
+    </span></a>
+</mat-nav-list>

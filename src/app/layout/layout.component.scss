@@ -1,0 +1,183 @@
+@import "src/styles.scss";
+@import "index";
+
+// 字体颜色
+$font-color: black;
+
+// 头部文字颜色
+$header-color: dark;
+// 菜单栏背景色
+$sidebar-background-color: $grey-10;
+// 顶部右侧菜单个数
+$nav-num: 4;
+// 标签页背景色
+$tabs-background-color: $grey-10;
+
+// 正文背景色
+$content-background-color: white;
+// 头部高度
+$header-height: 3.25rem;
+// 标签页高度
+$tabs-height: 2.25rem;
+// 菜单栏宽度
+$sidebar-width: 15rem;
+// 内容区域的内边距
+$content-padding: 10px;
+// 悬停背景色
+$sidebar-node-hover-background-color: rgba(0, 0, 0, 0.06);
+// 悬停文字颜色
+$sidebar-node-hover-color: black;
+// 选中背景颜色
+$selected-background-color: rgba(0, 0, 0, 0.06);
+// 选中文字颜色
+$selected-color: black;
+// 动画时间
+$transition-duration: 0.3s;
+// 悬停效果
+@mixin hover {
+  color: $selected-color;
+  background-color: $sidebar-node-hover-background-color;
+}
+
+// 选中效果
+@mixin activated {
+  color: $selected-color;
+  background-color: $selected-background-color;
+  border-right: 0.125rem solid $selected-color;
+}
+
+app-layout {
+  color: $font-color;
+  //width: 100vw;
+  //hight: 100vh;
+
+  > app-tabs {
+    background-color: $tabs-background-color;
+    width: calc(100% - #{$sidebar-width});
+    height: $tabs-height;
+    //padding-right: $tabs-height * $nav-num + $--x-padding-medium * 2;
+    position: fixed;
+    top: 0;
+    left: $sidebar-width;
+    z-index: 11;
+    transition: left $transition-duration, width $transition-duration;
+    font-size: 0.875rem;
+
+    .mat-icon-button {
+      height: $tabs-height !important;
+      width: $tabs-height !important;
+      line-height: 1.25rem !important;
+    }
+
+
+  }
+
+
+  > app-sidebar {
+    background-color: $sidebar-background-color;
+    height: 100%;
+    width: $sidebar-width;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    transition: width $transition-duration, background-color $transition-duration;
+
+    > app-header {
+      color: $header-color;
+      height: $header-height;
+      overflow: hidden;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      box-sizing: border-box;
+
+      > .logo {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 2rem;
+          transition: width $transition-duration, padding $transition-duration;
+        }
+
+        .title {
+          margin-left: 0.625rem;
+          visibility: inherit;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          transition: visibility $transition-duration, opacity $transition-duration;
+        }
+      }
+
+
+    }
+
+    .mat-list-item-content {
+      padding: 0.5rem !important;
+
+      .item-title {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        transition: visibility $transition-duration, opacity $transition-duration;
+      }
+    }
+  }
+
+  > app-content {
+    width: calc(100% - #{$sidebar-width});
+    height: calc(100% - #{$tabs-height});
+    padding-top: $tabs-height;
+    padding-left: $sidebar-width;
+    transition: padding $transition-duration;
+    display: block;
+  }
+
+}
+
+// 框架页中缩起菜单栏后的样式
+.sidebar-shrink {
+  > app-tabs, {
+    left: $tabs-height + 0.625rem;
+    width: calc(100% - #{$tabs-height + 0.625rem});
+  }
+
+  > app-content {
+    padding-left: $tabs-height + 0.625rem;
+    width: calc(100% - #{$tabs-height + 0.625rem});
+  }
+
+  > app-sidebar {
+    width: $tabs-height + 0.625rem;
+
+    > app-header {
+      padding: 0.75rem;
+
+      > .logo {
+        img {
+          width: 1.5rem;
+        }
+
+        .title {
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+
+
+    }
+
+    .mat-list-item-content {
+      padding: 0.5rem !important;
+
+      .item-title {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+
+
+  }
+}

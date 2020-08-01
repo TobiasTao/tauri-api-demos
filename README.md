@@ -1,7 +1,18 @@
-### Start
+## Introduction
+
+**Demonstrates core features of the Tauri API**
+
+## Features
+1. communication
+
+## Starting
+
 ```cmd
 yarn
 
-yarn start
+yarn fe:dev
 
+yarn be:dev
 ```
+
+

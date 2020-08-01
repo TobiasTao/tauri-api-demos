@@ -127,6 +127,15 @@
   dependencies:
     tslib "^2.0.0"
 
+"@angular/cdk@^10.1.0":
+  version "10.1.1"
+  resolved "https://registry.npm.taobao.org/@angular/cdk/download/@angular/cdk-10.1.1.tgz?cache=0&sync_timestamp=1595997907580&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40angular%2Fcdk%2Fdownload%2F%40angular%2Fcdk-10.1.1.tgz#aec95fb4d1143d0b82a41c34622453ffbae42872"
+  integrity sha1-rslftNEUPQuCpBw0YiRT/7rkKHI=
+  dependencies:
+    tslib "^2.0.0"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/cli@~10.0.4":
   version "10.0.4"
   resolved "https://registry.npm.taobao.org/@angular/cli/download/@angular/cli-10.0.4.tgz#5c13500f3135e43b9e6e53534fdfbc283abb83cc"
@@ -207,6 +216,13 @@
   version "10.0.5"
   resolved "https://registry.npm.taobao.org/@angular/forms/download/@angular/forms-10.0.5.tgz#c1e3d7218770e56ab0060b28dbf33d76a481a1c5"
   integrity sha1-wePXIYdw5WqwBgso2/M9dqSBocU=
+  dependencies:
+    tslib "^2.0.0"
+
+"@angular/material@^10.1.0":
+  version "10.1.0"
+  resolved "https://registry.npm.taobao.org/@angular/material/download/@angular/material-10.1.0.tgz#f36f4c2a7b7199178e449c6b759a89203ac2c194"
+  integrity sha1-829MKntxmReORJxrdZqJIDrCwZQ=
   dependencies:
     tslib "^2.0.0"
 
@@ -7783,9 +7799,9 @@ parse5@4.0.0:
   resolved "https://registry.npm.taobao.org/parse5/download/parse5-4.0.0.tgz?cache=0&sync_timestamp=1595849185980&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fparse5%2Fdownload%2Fparse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
   integrity sha1-bXhlbj2o14tOwLkG98CO8d/j9gg=
 
-parse5@5.1.1:
+parse5@5.1.1, parse5@^5.0.0:
   version "5.1.1"
-  resolved "https://registry.npm.taobao.org/parse5/download/parse5-5.1.1.tgz?cache=0&sync_timestamp=1595849256977&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fparse5%2Fdownload%2Fparse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
+  resolved "https://registry.npm.taobao.org/parse5/download/parse5-5.1.1.tgz?cache=0&sync_timestamp=1595850971402&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fparse5%2Fdownload%2Fparse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
   integrity sha1-9o5OW6GFKsLK3AD0VV//bCq7YXg=
 
 parseqs@0.0.5:
