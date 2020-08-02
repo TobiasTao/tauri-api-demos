@@ -4,7 +4,9 @@ windows_subsystem = "windows"
 )]
 
 use serde::Serialize;
-use tauri::execute_promise;
+use tauri::{event, execute_promise};
+use tauri::api::Error;
+use tauri::api::notification::Notification;
 
 mod cmd;
 
@@ -19,17 +21,31 @@ fn main() {
     // .splashscreen_html("<div>The app is loading...</div>")
     .setup(|webview, _source| {
       let mut webview = webview.as_mut();
-      tauri::event::listen(String::from("js-event"), move |msg| {
+      event::listen(String::from("js-event"), move |msg| {
         println!("got js-event with message '{:?}'", msg);
         let reply = Reply {
           data: "something else".to_string(),
         };
-        tauri::event::emit(
+        event::emit(
           &mut webview,
           String::from("rust-event"),
           Some(serde_json::to_string(&reply).unwrap()),
         ).expect("failed to emit");
       });
+
+
+      event::listen(String::from("notification"), move |msg| {
+        println!("got notification with message '{:?}'", msg);
+        let res = Notification::new()
+          .title("New message")
+          .body("You've got a new message.")
+          .show();
+
+        match res {
+          Err(e) => {},
+          Ok(_) => println!("notification success")
+        }
+      })
     })
     .invoke_handler(|_webview, arg| {
       use cmd::Cmd::*;

@@ -41,6 +41,12 @@ export class SidebarComponent implements OnInit {
         icon: 'folder_open',
         router: 'dialogs'
       },
+      {
+        id: '4',
+        label: 'Notification',
+        icon: 'notifications',
+        router: 'notification'
+      },
     ];
   }
 

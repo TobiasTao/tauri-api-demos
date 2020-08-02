@@ -4,6 +4,7 @@ import {CommunicationComponent} from './pages/communication/communication.compon
 import {HomeComponent} from './pages/home/home.component';
 import {SplashscreenComponent} from './pages/splashscreen/splashscreen.component';
 import {DialogsComponent} from './pages/dialogs/dialogs.component';
+import {NotificationComponent} from './pages/notification/notification.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'dialogs',
     component: DialogsComponent
+  },
+  {
+    path: 'notification',
+    component: NotificationComponent
   }
 ];
 
