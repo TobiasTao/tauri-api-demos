@@ -26,9 +26,15 @@ export class SidebarComponent implements OnInit {
       {
         id: '1',
         label: 'Communication',
-        icon: 'chat',
+        icon: 'question_answer',
         router: 'communication'
-      }
+      },
+      {
+        id: '2',
+        label: 'Splashscreen',
+        icon: 'hourglass_bottom',
+        router: 'splashscreen'
+      },
     ];
   }
 
