@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {listen} from 'tauri/api/event';
 
 @Component({
   selector: 'app-content',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  listenMsg: string;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+    listen('rust-event', res => {
+      this.listenMsg = JSON.stringify(res);
+    });
   }
 
 }

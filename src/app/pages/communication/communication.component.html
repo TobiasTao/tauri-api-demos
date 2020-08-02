@@ -1,0 +1,29 @@
+<mat-accordion multi>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Synchronous communication
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <button (click)="syncSend()" mat-button>send sync msg</button>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Asynchronous communication
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <button (click)="asyncSend()" mat-button>send sync msg</button>
+    {{asyncMsg}}
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Emit&listen backend
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <button (click)="emitBackend()" mat-button>emit</button>
+    Listening backend: {{listenMsg}}
+  </mat-expansion-panel>
+</mat-accordion>
+
