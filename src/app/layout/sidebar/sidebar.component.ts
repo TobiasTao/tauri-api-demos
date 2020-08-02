@@ -35,6 +35,12 @@ export class SidebarComponent implements OnInit {
         icon: 'hourglass_bottom',
         router: 'splashscreen'
       },
+      {
+        id: '3',
+        label: 'Dialogs',
+        icon: 'folder_open',
+        router: 'dialogs'
+      },
     ];
   }
 

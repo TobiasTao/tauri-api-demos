@@ -16,7 +16,7 @@ struct Reply {
 
 fn main() {
   tauri::AppBuilder::new()
-    .splashscreen_html("<div>The app is loading...</div>")
+    // .splashscreen_html("<div>The app is loading...</div>")
     .setup(|webview, _source| {
       let mut webview = webview.as_mut();
       tauri::event::listen(String::from("js-event"), move |msg| {

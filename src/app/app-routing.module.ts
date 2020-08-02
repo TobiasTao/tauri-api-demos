@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {CommunicationComponent} from './pages/communication/communication.component';
 import {HomeComponent} from './pages/home/home.component';
 import {SplashscreenComponent} from './pages/splashscreen/splashscreen.component';
+import {DialogsComponent} from './pages/dialogs/dialogs.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'splashscreen',
     component: SplashscreenComponent
+  },
+  {
+    path: 'dialogs',
+    component: DialogsComponent
   }
 ];
 
